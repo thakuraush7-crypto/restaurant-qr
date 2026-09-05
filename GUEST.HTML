@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Restaurant Menu</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="guest-body">
+
+
+    <div class="guest-container">
+
+
+        <div class="guest-logo">
+            🍽
+        </div>
+
+
+        <p class="guest-welcome">
+            WELCOME TO
+        </p>
+
+
+        <h1 id="restaurantName">
+            Our Restaurant
+        </h1>
+
+
+        <p class="guest-description">
+
+            Good food.
+            Great moments.
+
+        </p>
+
+
+        <div class="guest-buttons">
+
+
+            <!-- MENU -->
+
+            <a
+                id="menuLink"
+                class="guest-button guest-menu"
+                target="_blank"
+            >
+
+                🍽
+                <span>
+                    View Menu
+                </span>
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                id="instagramLink"
+                class="guest-button"
+                target="_blank"
+            >
+
+                ◎
+                <span>
+                    Instagram
+                </span>
+
+            </a>
+
+
+            <!-- FACEBOOK -->
+
+            <a
+                id="facebookLink"
+                class="guest-button"
+                target="_blank"
+            >
+
+                f
+                <span>
+                    Facebook
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+        <p class="scan-text">
+
+            Tap any button to continue
+
+        </p>
+
+
+        <p class="copyright">
+
+            Thank you for dining with us ❤️
+
+        </p>
+
+
+    </div>
+
+
+
+<script>
+
+
+    // Read information from QR URL
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const restaurant =
+        params.get("name");
+
+
+    const menu =
+        params.get("menu");
+
+
+    const instagram =
+        params.get("instagram");
+
+
+    const facebook =
+        params.get("facebook");
+
+
+    // Restaurant name
+
+    if (restaurant) {
+
+        document.getElementById(
+            "restaurantName"
+        ).innerText = restaurant;
+
+        document.title =
+            restaurant + " - Menu";
+
+    }
+
+
+    // Menu
+
+    if (menu) {
+
+        document.getElementById(
+            "menuLink"
+        ).href = menu;
+
+    }
+
+
+    // Instagram
+
+    if (instagram) {
+
+        document.getElementById(
+            "instagramLink"
+        ).href = instagram;
+
+    }
+
+
+    // Facebook
+
+    if (facebook) {
+
+        document.getElementById(
+            "facebookLink"
+        ).href = facebook;
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>

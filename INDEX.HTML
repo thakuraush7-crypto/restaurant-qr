@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TableTap - Restaurant QR Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>🍽</span>
+            TableTap
+        </div>
+
+        <a href="#generator" class="nav-button">
+            Create QR
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-heading">
+                SMART RESTAURANT QR SYSTEM
+            </p>
+
+            <h1>
+                One Scan.
+                <br>
+                <span>Everything Guests Need.</span>
+            </h1>
+
+            <p class="hero-text">
+
+                Create a professional restaurant QR code.
+                Customers can scan once and instantly access
+                your menu, Instagram and Facebook.
+
+            </p>
+
+            <a href="#generator" class="main-button">
+                Create Your QR ↓
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- QR GENERATOR -->
+
+    <section id="generator" class="generator-section">
+
+        <div class="generator-container">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="form-area">
+
+                <p class="section-number">
+                    01 / RESTAURANT SETUP
+                </p>
+
+                <h2>
+                    Restaurant Details
+                </h2>
+
+                <p class="description">
+
+                    Enter your restaurant information
+                    and social media links.
+
+                </p>
+
+
+                <!-- Restaurant Name -->
+
+                <label>
+                    Restaurant Name
+                </label>
+
+                <input
+                    type="text"
+                    id="restaurantName"
+                    placeholder="Example: The Royal Table"
+                    value="The Royal Table"
+                >
+
+
+                <!-- Menu -->
+
+                <label>
+                    Menu URL
+                </label>
+
+                <input
+                    type="text"
+                    id="menuUrl"
+                    placeholder="https://yourrestaurant.com/menu"
+                >
+
+
+                <!-- Instagram -->
+
+                <label>
+                    Instagram URL
+                </label>
+
+                <input
+                    type="text"
+                    id="instagramUrl"
+                    placeholder="https://instagram.com/yourrestaurant"
+                >
+
+
+                <!-- Facebook -->
+
+                <label>
+                    Facebook URL
+                </label>
+
+                <input
+                    type="text"
+                    id="facebookUrl"
+                    placeholder="https://facebook.com/yourrestaurant"
+                >
+
+
+                <button
+                    class="generate-button"
+                    onclick="generateQR()"
+                >
+                    Generate QR Code
+                </button>
+
+
+                <p id="message"></p>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="qr-area">
+
+                <div class="qr-box">
+
+                    <div id="qrcode"></div>
+
+                </div>
+
+
+                <h3 id="qrRestaurantName">
+                    The Royal Table
+                </h3>
+
+                <p>
+                    Scan to view menu & social pages
+                </p>
+
+
+                <button
+                    class="download-button"
+                    onclick="downloadQR()"
+                >
+                    Download QR
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CUSTOMER PREVIEW -->
+
+    <section class="preview-section">
+
+        <p class="section-number">
+            02 / CUSTOMER EXPERIENCE
+        </p>
+
+        <h2>
+            What Customers See
+        </h2>
+
+
+        <div class="phone">
+
+            <div class="phone-top"></div>
+
+
+            <div class="customer-page">
+
+                <div class="restaurant-logo">
+                    🍽
+                </div>
+
+                <p class="welcome">
+                    WELCOME TO
+                </p>
+
+                <h3 id="previewRestaurant">
+                    The Royal Table
+                </h3>
+
+                <p class="tagline">
+                    Good food. Great moments.
+                </p>
+
+
+                <a
+                    id="previewMenu"
+                    href="#"
+                    target="_blank"
+                    class="customer-button menu-button"
+                >
+                    🍽 View Menu
+                </a>
+
+
+                <a
+                    id="previewInstagram"
+                    href="#"
+                    target="_blank"
+                    class="customer-button"
+                >
+                    ◎ Instagram
+                </a>
+
+
+                <a
+                    id="previewFacebook"
+                    href="#"
+                    target="_blank"
+                    class="customer-button"
+                >
+                    f Facebook
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-section">
+
+        <p class="section-number">
+            03 / HOW IT WORKS
+        </p>
+
+        <h2>
+            Three Simple Steps
+        </h2>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <span>
+                    01
+                </span>
+
+                <h3>
+                    Create
+                </h3>
+
+                <p>
+                    Enter your restaurant,
+                    menu and social media links.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <span>
+                    02
+                </span>
+
+                <h3>
+                    Download
+                </h3>
+
+                <p>
+                    Generate and download
+                    your QR code.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <span>
+                    03
+                </span>
+
+                <h3>
+                    Scan
+                </h3>
+
+                <p>
+                    Customers scan the QR
+                    and access everything.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 TableTap
+        <br>
+        Digital Restaurant Experience
+
+    </footer>
+
+
+<script>
+
+    let qrCode;
+
+
+    // Convert normal links into proper URLs
+
+    function makeURL(url) {
+
+        url = url.trim();
+
+        if (url === "") {
+            return "";
+        }
+
+        if (!url.startsWith("http://") &&
+            !url.startsWith("https://")) {
+
+            url = "https://" + url;
+
+        }
+
+        return url;
+
+    }
+
+
+    // Generate QR Code
+
+    function generateQR() {
+
+        const restaurantName =
+            document.getElementById("restaurantName").value.trim();
+
+        const menu =
+            makeURL(
+                document.getElementById("menuUrl").value
+            );
+
+        const instagram =
+            makeURL(
+                document.getElementById("instagramUrl").value
+            );
+
+        const facebook =
+            makeURL(
+                document.getElementById("facebookUrl").value
+            );
+
+
+        const message =
+            document.getElementById("message");
+
+
+        // Check information
+
+        if (
+            restaurantName === "" ||
+            menu === "" ||
+            instagram === "" ||
+            facebook === ""
+        ) {
+
+            message.innerHTML =
+                "⚠ Please fill in all fields.";
+
+            message.style.color = "#ff6b6b";
+
+            return;
+
+        }
+
+
+        /*
+            IMPORTANT
+
+            The QR code points to guest.html.
+
+            The restaurant information is passed
+            through the URL.
+        */
+
+        const guestPage =
+            new URL(
+                "guest.html",
+                window.location.href
+            );
+
+
+        guestPage.searchParams.set(
+            "name",
+            restaurantName
+        );
+
+        guestPage.searchParams.set(
+            "menu",
+            menu
+        );
+
+        guestPage.searchParams.set(
+            "instagram",
+            instagram
+        );
+
+        guestPage.searchParams.set(
+            "facebook",
+            facebook
+        );
+
+
+        // Remove previous QR
+
+        document.getElementById(
+            "qrcode"
+        ).innerHTML = "";
+
+
+        // Create QR
+
+        qrCode = new QRCode(
+
+            document.getElementById("qrcode"),
+
+            {
+
+                text: guestPage.href,
+
+                width: 230,
+
+                height: 230,
+
+                colorDark: "#111111",
+
+                colorLight: "#ffffff",
+
+                correctLevel:
+                    QRCode.CorrectLevel.H
+
+            }
+
+        );
+
+
+        // Update names
+
+        document.getElementById(
+            "qrRestaurantName"
+        ).innerText = restaurantName;
+
+
+        document.getElementById(
+            "previewRestaurant"
+        ).innerText = restaurantName;
+
+
+        // Update preview links
+
+        document.getElementById(
+            "previewMenu"
+        ).href = menu;
+
+
+        document.getElementById(
+            "previewInstagram"
+        ).href = instagram;
+
+
+        document.getElementById(
+            "previewFacebook"
+        ).href = facebook;
+
+
+        message.innerHTML =
+            "✓ QR Code generated successfully!";
+
+        message.style.color = "#d7a84f";
+
+    }
+
+
+
+    // Download QR
+
+    function downloadQR() {
+
+        const canvas =
+            document.querySelector(
+                "#qrcode canvas"
+            );
+
+
+        if (!canvas) {
+
+            alert(
+                "Please generate the QR code first."
+            );
+
+            return;
+
+        }
+
+
+        const image =
+            canvas.toDataURL("image/png");
+
+
+        const download =
+            document.createElement("a");
+
+
+        download.href = image;
+
+        download.download =
+            "restaurant-qr-code.png";
+
+
+        download.click();
+
+    }
+
+
+</script>
+
+</body>
+
+</html>
